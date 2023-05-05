@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <unordered_set>
+#include <stack>
 
 using namespace std;
 
@@ -14,7 +15,7 @@ class User{
 
     public:
 
-    //getters + setters
+//getters + setters
     string Email();
     void setEmail(string other);
 
@@ -51,7 +52,7 @@ class User{
     
 
 
-    //OTHER METHODS
+//OTHER METHODS
 
    //prints the private var transcript, prints a vector of strings
    void printTranscript();
@@ -66,10 +67,10 @@ class User{
     unsigned int broadcastsPosted;
     unsigned int broadcastsListened;
     vector<string> languages;
-    // set filesUploaded
-    unordered_set<T> filesUploaded = {};
-    //hash filesSaved
-    // stack watchhistory
+    unordered_set<T> contentUploaded;
+    unordered_set<T> contentSaved;
+    stack<T> myStack;
+    
 
 
     
