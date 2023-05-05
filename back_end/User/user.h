@@ -1,9 +1,15 @@
 #ifndef USER_H
 #define USER_H 
+
 #include <string>
 #include <vector>
+#include <unordered_set>
+
 using namespace std;
 
+
+
+template <class T>
 class User{
 
     public:
@@ -36,6 +42,20 @@ class User{
     vector<string> Languages();
     void setLanguages (vector<string> other);
 
+    //points counter int, limit is 20,000
+    unsigned int points;
+    void setPoint(unsigned int other);
+
+    //vector transcript, each element is a word of the transcript
+    vector<string> transcript;
+    
+
+
+    //OTHER METHODS
+
+   //prints the private var transcript, prints a vector of strings
+   void printTranscript();
+
     private:
     string email;
     string username;
@@ -46,6 +66,13 @@ class User{
     unsigned int broadcastsPosted;
     unsigned int broadcastsListened;
     vector<string> languages;
+    // set filesUploaded
+    unordered_set<T> filesUploaded = {};
+    //hash filesSaved
+    // stack watchhistory
+
+
+    
 
 };
 #endif
