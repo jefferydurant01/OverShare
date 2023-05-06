@@ -80,3 +80,8 @@ class User{
 
 };
 #endif
+
+
+//username invariant method, 7char limit
+//community invariants 3 languages
+    //make element = lang
