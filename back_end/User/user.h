@@ -44,8 +44,8 @@ class User{
     void setLanguages (vector<string> other);
 
     //points counter int, limit is 20,000
-    unsigned int points;
-    void setPoint(unsigned int other);
+    unsigned int Points();
+    void setPoints(unsigned int other);
 
     //vector transcript, each element is a word of the transcript
     vector<string> transcript;
@@ -54,7 +54,7 @@ class User{
 
 //OTHER METHODS
 
-   //prints the private var transcript, prints a vector of strings
+   //prints the private var transcript, a vector of strings
    void printTranscript();
 
     private:
@@ -66,6 +66,7 @@ class User{
     unsigned long timeListened;
     unsigned int broadcastsPosted;
     unsigned int broadcastsListened;
+    unsigned int points;
     vector<string> languages;
     unordered_set<T> contentUploaded;
     unordered_set<T> contentSaved;
