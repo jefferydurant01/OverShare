@@ -1,91 +1,63 @@
 #include "User.h"
 #include <iostream>
+//#include <nlohmann/json.hpp>
+
+//using json = nlohmann::json;
+
+// Default constructor
+User<string>::User() {
+    // Initialize member variables with default values if needed
+}
+
+// Parameterized constructor
+User<string>::User(string mail, string user, string pass, vector<string> langs)
+    : email(mail),
+      username(user),
+      password(pass),
+      languages(langs) {
+    // Initialize other member variables if needed
+}
 
 // Getters and setters
-
-string User<string>::Email() {
+string User<string>::getEmail() const {
     return email;
 }
 
-void User<string>::setEmail(string other) {
+void User<string>::setEmail(const string& other) {
     email = other;
 }
 
-string User<string>::Username() {
+string User::getUsername() const {
     return username;
 }
 
-void User<string>::setUsername(string other) {
+void User::setUsername(const string& other) {
     username = other;
 }
 
-string User<string>::Password() {
+string User::getPassword() const {
     return password;
 }
 
-void User<string>::setPassword(string other) {
+void User::setPassword(const string& other) {
     password = other;
 }
 
-int User<string>::ReportCount() {
-    return reportCount;
-}
-
-void User<string>::setReportCount(int other) {
-    reportCount = other;
-}
-
-bool User<string>::Refresh() {
-    return refresh;
-}
-
-void User<string>::setRefresh(bool other) {
-    refresh = other;
-}
-
-unsigned long User<string>::TimeListened() {
-    return timeListened;
-}
-
-void User<string>::setTimeListened(unsigned long other) {
-    timeListened = other;
-}
-
-unsigned int User<string>::BroadcastsPosted() {
-    return broadcastsPosted;
-}
-
-void User<string>::setBroadcastsPosted(unsigned int other) {
-    broadcastsPosted = other;
-}
-
-unsigned int User<string>::BroadcastsListened() {
-    return broadcastsListened;
-}
-
-void User<string>::setBroadcastsListened(unsigned int other) {
-    broadcastsListened = other;
-}
-
-vector<string> User<string>::Languages() {
+vector<string> User::getLanguages() const {
     return languages;
 }
 
-void User<string>::setLanguages(vector<string> other) {
+void User::setLanguages(const vector<string>& other) {
     languages = other;
 }
 
-unsigned int User<string>::Points() {
-    return points;
-}
+/*json User::toJson() const {
+    json jsonData;
 
-void User<string>::setPoints(unsigned int other) {
-    points = other;
-}
+    jsonData["email"] = email;
+    jsonData["username"] = username;
+    jsonData["password"] = password;
+    jsonData["languages"] = languages;
 
-void User<string>::printTranscript() {
-    for (const string& word : transcript) {
-        cout << word << " ";
-    }
-    cout << endl;
-}
+    return jsonData;
+}*/

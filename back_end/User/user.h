@@ -14,6 +14,8 @@ template <class T>
 class User{
 
     public:
+    User();
+    User(string mail, string user, string pass, vector<string> langs);
 
 //getters + setters
     string Email();
