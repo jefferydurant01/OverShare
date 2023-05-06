@@ -1,4 +1,4 @@
-#include "User.h"
+#include "user.h"
 #include <iostream>
 //#include <nlohmann/json.hpp>
 
@@ -10,16 +10,16 @@ User<string>::User() {
 }
 
 // Parameterized constructor
-User<string>::User(string mail, string user, string pass, vector<string> langs)
-    : email(mail),
-      username(user),
-      password(pass),
-      languages(langs) {
+User<string>::User(string mail, string user, string pass, vector<string> langs) {
+      email = mail;
+      username = user;
+      password = pass;
+      languages = langs;
     // Initialize other member variables if needed
 }
 
 // Getters and setters
-string User<string>::getEmail() const {
+string User<string>::Email() {
     return email;
 }
 
@@ -27,27 +27,51 @@ void User<string>::setEmail(const string& other) {
     email = other;
 }
 
-string User::getUsername() const {
+string User<string>::Username() {
     return username;
 }
 
-void User::setUsername(const string& other) {
+void User<string>::setUsername(const string& other) {
     username = other;
 }
 
-string User::getPassword() const {
+string User<string>::Password() {
     return password;
 }
 
-void User::setPassword(const string& other) {
+void User<string>::setPassword(const string& other) {
     password = other;
 }
 
-vector<string> User::getLanguages() const {
+int User<string>::ReportCount() {
+    return reportCount;
+}
+
+void User<string>::setReportCount(int other) {
+    reportCount = other;
+}
+
+bool User<string>::Refresh() {
+    refresh = true;
+}
+
+void User<string>:: setRefresh(bool other) {
+    refresh = other;
+}
+
+unsigned long User<string>::TimeListened() {
+    return timeListened;
+}
+
+void User<string>::setTimeListened(unsigned long other) {
+    timeListened = other;
+}
+
+vector<string> User<string>::Languages() const {
     return languages;
 }
 
-void User::setLanguages(const vector<string>& other) {
+void User<string>::setLanguages(const vector<string>& other) {
     languages = other;
 }
 

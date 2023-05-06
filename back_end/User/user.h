@@ -10,7 +10,7 @@ using namespace std;
 
 
 
-template <class T>
+template <typename T>
 class User{
 
     public:
@@ -19,13 +19,13 @@ class User{
 
 //getters + setters
     string Email();
-    void setEmail(string other);
+    void setEmail(const string& other);
 
     string Username();
-    void setUsername(string other);
+    void setUsername(const string& other);
 
     string Password();
-    void setPassword(string other);
+    void setPassword(const string& other);
 
     int ReportCount();
     void setReportCount(int other);
@@ -42,8 +42,8 @@ class User{
     unsigned int BroadcastsListened();
     void setBroadcastsListened(unsigned int other);
 
-    vector<string> Languages();
-    void setLanguages (vector<string> other);
+    vector<string> Languages() const;
+    void setLanguages (const vector<string>& other);
 
     //points counter int, limit is 20,000
     unsigned int Points();
@@ -85,3 +85,5 @@ class User{
 //username invariant method, 7char limit
 //community invariants 3 languages
     //make element = lang
+
+    //community
