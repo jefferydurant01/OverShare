@@ -1,16 +1,15 @@
 #include "user.h"
-#include <iostream>
-//#include <nlohmann/json.hpp>
 
-//using json = nlohmann::json;
 
 // Default constructor
-User<string>::User() {
+template <class T>
+User<T>::User() {
     // Initialize member variables with default values if needed
 }
 
 // Parameterized constructor
-User<string>::User(string mail, string user, string pass, vector<string> langs) {
+template <class T>
+User<T>::User(string mail, string user, string pass, vector<string> langs) {
       email = mail;
       username = user;
       password = pass;
@@ -19,63 +18,79 @@ User<string>::User(string mail, string user, string pass, vector<string> langs) 
 }
 
 // Getters and setters
-string User<string>::Email() {
+template <class T>
+string User<T>::Email() {
     return email;
 }
 
-void User<string>::setEmail(const string& other) {
+template <class T>
+void User<T>::setEmail(const string& other) {
     email = other;
 }
 
-string User<string>::Username() {
+template <class T>
+string User<T>::Username() {
     return username;
 }
 
-void User<string>::setUsername(const string& other) {
+template <class T>
+void User<T>::setUsername(const string& other) {
     username = other;
 }
 
-string User<string>::Password() {
+template <class T>
+string User<T>::Password() {
     return password;
 }
 
-void User<string>::setPassword(const string& other) {
+template <class T>
+void User<T>::setPassword(const string& other) {
     password = other;
 }
 
-int User<string>::ReportCount() {
+template <class T>
+int User<T>::ReportCount() {
     return reportCount;
 }
 
-void User<string>::setReportCount(int other) {
+template <class T>
+void User<T>::setReportCount(int other) {
     reportCount = other;
 }
 
-bool User<string>::Refresh() {
+template <class T>
+bool User<T>::Refresh() {
     refresh = true;
 }
 
-void User<string>:: setRefresh(bool other) {
+template <class T>
+void User<T>:: setRefresh(bool other) {
     refresh = other;
 }
 
-unsigned long User<string>::TimeListened() {
+template <class T>
+unsigned long User<T>::TimeListened() {
     return timeListened;
 }
 
-void User<string>::setTimeListened(unsigned long other) {
+template <class T>
+void User<T>::setTimeListened(unsigned long other) {
     timeListened = other;
 }
 
-vector<string> User<string>::Languages() const {
+template <class T>
+vector<string> User<T>::Languages() const {
     return languages;
 }
 
-void User<string>::setLanguages(const vector<string>& other) {
+template <class T>
+void User<T>::setLanguages(const vector<string>& other) {
     languages = other;
 }
 
-/*json User::toJson() const {
+template <class T>
+json User<T>::toJson() const 
+{
     json jsonData;
 
     jsonData["email"] = email;
@@ -84,4 +99,4 @@ void User<string>::setLanguages(const vector<string>& other) {
     jsonData["languages"] = languages;
 
     return jsonData;
-}*/
+};
