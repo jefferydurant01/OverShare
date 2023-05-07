@@ -5,7 +5,10 @@
 #include <vector>
 #include <unordered_set>
 #include <stack>
+#include <iostream>
+#include <back_end/json.hpp>
 
+using json = nlohmann::json;
 using namespace std;
 
 
@@ -51,9 +54,9 @@ class User{
 
     //vector transcript, each element is a word of the transcript
     vector<string> transcript;
+
+    json toJson() const;
     
-
-
 //OTHER METHODS
 
    //prints the private var transcript, a vector of strings
@@ -74,10 +77,6 @@ class User{
     unordered_set<T> contentSaved;
     stack<T> myStack;
     
-
-
-    
-
 };
 #endif
 
